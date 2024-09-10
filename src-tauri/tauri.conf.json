@@ -1,0 +1,45 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../build",
+    "devUrl": "http://localhost:1420"
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+  "productName": "csp-issue",
+  "version": "0.1.0",
+  "identifier": "csp.issue.app",
+  "plugins": {},
+  "app": {
+    "trayIcon": {
+      "iconPath": "icons/128x128.png",
+      "iconAsTemplate": true
+    },
+    "security": {
+      "csp": null,
+      "pattern": {
+        "use": "isolation",
+        "options": {
+          "dir": "../build-isolation"
+        }
+      }
+    },
+    "windows": [
+      {
+        "title": "CSP Issue",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}
